@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.seraphim.kotlin.multiplatform.library)
 }
 android {
-    namespace = "com.seraphim.babydiary.shared"
+    namespace = "com.seraphim.utils"
 }
 kotlin {
     compilerOptions {
@@ -23,6 +23,9 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 // 这里添加该 module 需要的依赖
+                implementation(libs.mmkv.kotlin)
+                implementation(libs.napier.logger)
+                implementation(libs.kotlinx.datetime)
             }
         }
         // 其他 sourceSet 配置
