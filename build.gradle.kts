@@ -1,12 +1,15 @@
-import org.gradle.kotlin.dsl.support.kotlinCompilerOptions
+import com.seraphim.plugin.compileSdkVersion
+import com.seraphim.plugin.minSdkVersion
 
 plugins {
     alias(libs.plugins.seraphim.kotlin.multiplatform.library)
 }
-android {
-    namespace = "com.seraphim.utils"
-}
 kotlin {
+    androidLibrary {
+        namespace = "com.seraphim.utils"
+        compileSdk = project.compileSdkVersion
+        minSdk = project.minSdkVersion
+    }
     compilerOptions {
         freeCompilerArgs.addAll(
             listOf(
