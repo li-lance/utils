@@ -26,7 +26,6 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 // 这里添加该 module 需要的依赖
-                implementation(libs.mmkv.kotlin)
                 implementation(libs.napier.logger)
                 implementation(libs.kotlinx.datetime)
             }
