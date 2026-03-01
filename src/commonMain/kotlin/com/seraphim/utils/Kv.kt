@@ -17,11 +17,11 @@ fun Any.safeKvSave(key: String) {
 @Suppress("UNCHECKED_CAST")
 private fun <T> kvGet(key: String, defaultValue: T): T {
     return when (defaultValue) {
-        is String -> kv.takeString(key, defaultValue) as T
-        is Int -> kv.takeInt(key, defaultValue) as T
-        is Boolean -> kv.takeBoolean(key, defaultValue) as T
-        is Float -> kv.takeFloat(key, defaultValue) as T
-        is Long -> kv.takeLong(key, defaultValue) as T
+        is String -> kv.getString(key, defaultValue) as T
+        is Int -> kv.getInt(key, defaultValue) as T
+        is Boolean -> kv.getBoolean(key, defaultValue) as T
+        is Float -> kv.getFloat(key, defaultValue) as T
+        is Long -> kv.getLong(key, defaultValue) as T
         else -> throw IllegalArgumentException("Unsupported type")
     }
 }
