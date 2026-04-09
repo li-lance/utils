@@ -23,7 +23,10 @@ kotlin {
         )
     }
     sourceSets {
-        val commonMain by getting {
+        androidMain.dependencies {
+            implementation(libs.mmkv.kotlin)
+        }
+        commonMain {
             dependencies {
                 // 这里添加该 module 需要的依赖
                 implementation(libs.napier.logger)
