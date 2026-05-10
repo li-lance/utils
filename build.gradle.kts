@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.seraphim.kotlin.multiplatform.library)
 }
 kotlin {
-    androidLibrary {
+    android {
         namespace = "com.seraphim.utils"
         compileSdk = project.compileSdkVersion
         minSdk = project.minSdkVersion
